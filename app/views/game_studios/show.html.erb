@@ -1,0 +1,17 @@
+<p>
+  <strong>Name:</strong>
+  <%= @game_studio.name %>
+</p>
+
+<p>
+  <strong>Location:</strong>
+  <%= @game_studio.location %>
+</p>
+
+<p>
+  <strong>Game Studio Id:</strong>
+  <%= @game_studio.id %>
+</p>
+
+<%= link_to 'Edit', edit_game_studio_path(@game_studio) %> |
+<%= link_to 'Back', game_studios_path %>
