@@ -11,23 +11,27 @@
     </div>
   <% end %>
 
+ <%= form.label :game_id %>
+  <%= collection_select(@game, :game_id, Game.all, :id, :name) %>
   <div class="field">
-    <%= form.label :drop_Your_Review %>
-    <%= form.text_area :reviewed_game  %>
   </div>
 
   <div class="field">
     <%= form.label :rating %>
-    <%= form.number_field :rating %>
+    <%= form.number_field :rating, :within => 0..5 %>
   </div>
 
-    <div class="field">
-    <%= form.label :game_id %>
-    <%= form.number_field :game_id %>
+  <div class="field">
+    <%= form.label :drop_Your_Review %>
+    <%= form.text_area :reviewed_game, :size => "50x10"  %>
   </div>
 
   <div class="field form-group">
     <%= form.number_field :user_id, id: :review_user_id, class:"form-control", value: current_user.id, type: :hidden %>
+  </div>
+
+  <div class="field form-group">
+    <%= form.number_field :game_id, id: :review_game_id, class:"form-control", value: current_user.id, type: :hidden %>
   </div>
 
   <div class="actions">

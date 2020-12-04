@@ -1,5 +1,5 @@
 <%= form_with(model: game_studio, local: true) do |form| %>
-  <% if game_studio.errors.any? %>
+  <% if game_studio.errors.any? 
     <div id="error_explanation">
       <h2><%= pluralize(game_studio.errors.count, "error") %> prohibited this game_studio from being saved:</h2>
 
