@@ -2,6 +2,8 @@
 
 <h1>Reviews</h1>
 
+<%= link_to 'New Review', new_review_path %>
+
 <table>
   <thead>
     <tr>
@@ -16,7 +18,7 @@
     <% @reviews.each do |review| %>
      <%# <% if review.user == current_user %> 
       <tr>
-        <td><%= review.game.name %></td>
+        <td><%= review.game.id %></td>
         <td><%= review.reviewed_game %></td>
         <td><%= review.rating %></td>
         <td><%= link_to 'Show', review %></td>
@@ -30,5 +32,5 @@
 
 <br>
 
-<%= link_to 'New Review', new_review_path %>
+
 

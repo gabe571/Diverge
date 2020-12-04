@@ -1,7 +1,6 @@
 class GamesController < ApplicationController
   before_action :set_game, only: [:show, :edit, :update, :destroy]
-  require 'httparty'
-  require 'json'
+ 
   # GET /games
   # GET /games.json
   def index
@@ -16,7 +15,7 @@ class GamesController < ApplicationController
 
   # GET /games/new
   def new
-    @game = Game.new
+    @game = current_user.games.build
   end
 
   # GET /games/1/edit

@@ -12,8 +12,7 @@
   <% end %>
 
  <%= form.label :game_id %>
-  <%= collection_select(@game, :game_id, Game.all, :id, :name) %>
-  <div class="field">
+   <%= collection_select(@game, :game_id, Game.all, :id, :name) %>
   </div>
 
   <div class="field">
@@ -30,8 +29,8 @@
     <%= form.number_field :user_id, id: :review_user_id, class:"form-control", value: current_user.id, type: :hidden %>
   </div>
 
-  <div class="field form-group">
-    <%= form.number_field :game_id, id: :review_game_id, class:"form-control", value: current_user.id, type: :hidden %>
+<div class="field form-group">
+    <%= form.number_field :game_id, id: :review_game_id, class:"form-control", value: @game_id, type: :hidden %>
   </div>
 
   <div class="actions">
