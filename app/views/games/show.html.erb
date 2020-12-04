@@ -8,5 +8,16 @@
   <%= @game.released %>
 </p>
 
+<p>
+  <strong>Game Studio:</strong>
+  <%= @game.game_studio.name %>
+</p>
+
+<p>
+  <strong>Address:</strong>
+  <%= @game.game_studio.location %>
+</p>
+
+
 <%= link_to 'Edit', edit_game_path(@game) %> |
 <%= link_to 'Back', games_path %>
