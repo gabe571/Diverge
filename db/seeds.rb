@@ -16,13 +16,15 @@ User.destroy_all
 # require 'json'
 
 game_studios = [
-    {name: "Blizzard", location: "Blizzard Entertainment P.O. Box 18979 Irvine, CA 92623" },
+   {name: "Blizzard", location: "Blizzard Entertainment P.O. Box 18979 Irvine, CA 92623" },
    {name: "Square Enix", location: "SHINJUKU EASTSIDE SQUARE 6-27-30 Shinjuku, Shinjuku-ku, Tokyo 160-8430, Japan" },
    {name: "Bethesda Game Studio", location: "Bethesda Softworks LLC a ZeniMax Media company 1370 Piccard Drive, Suite 120 Rockville, MD 20850" },
    {name: "BioWare", location: "10423 101 St NW #1800, Edmonton, AB T5H 0E7, Canada" },
   ]
 
   game_studios.each {|game_studio| GameStudio.create(game_studio)}
+
+  user = User.create! :username => 'John Doe', :email => 'john@gmail.com', :password => 'topsecret', :password_confirmation => 'topsecret'
 
 games = [  
   {name: "Warcraft 3", released: "2002-03-07", game_studio_id: 1 },
@@ -42,49 +44,11 @@ games = [
 
 games.each {|game| Game.create(game)}
 
-users = [
-    {username: "David@gmail.com", password: "12356" },
-    {username: "Daniel@aol.com", password: "3456"} ,
-    {username: "April@yahoo.com", password: "4567"},
-    {username: "Alice@msn.com", password: "9899"},
-    {username: "Jason@cox.net", password: "12356" },
-    {username: "Alvin@apple.com", password: "3456"} ,
-    {username: "Erin@ymail.com", password: "4567"},
-    {username: "Jackson@gmail.com", password: "9899"}
-  ]
-  
-  users.each {|user| User.create(user)}
+reviews = [
+{reviewed_game: "this game was a blast!!!", rating:"5", user_id: 1, game_id: 1}
+]
 
-  reviews = [
+reviews.each {|review| Review.create(review)}
   
-  {reviewed_game: "******* One of the best games on PS4 hands down.
-    I have played Diablo since the first one on PC and even though nothing can beat 2 in my opinion this is close.
-    The vanilla version is nothing compared to Reaper of Souls, it added a whole new game to Diablo, with rifts and greater rifts and the new chapter V and also adventure mode where its endless and you can farm high end gear. Blizzard are still releasing patches adding new seasons and content so you get ALOT of gameplay and content for the price.
-    Its so good I have got platinum on 3 different versions and still go back to it every now and again.
-    It also has multiplayer of up to 4 players which is also fun, challenging and more rewarding.
-    I bought this for my son for Christmas so we can play multiplayer even though I have full level 70 characters *****", rating: 5},
-  {reviewed_game: "******Ignore the negative reviews, all the dlc downloads automatically so who cares if it’s on the disc or not. Played the original version on PS3 which was good but this PS4 version is 100 times better! If you love character building RPGs like Baldur’s Gate and Champions of Norrath get this now*****"},
-  {reviewed_game: "******The base game is good i had it on previous console generation. But the expansions really make the game re-playable. Just a disappointing price for a very old game. they do bring out new seasons and some content tweaks, so it does keep the game fresh. worth a play.******", rating: 5},
-  {reviewed_game: "*****This Game was ok, I have def played better ones! ******", rating: 3},
-  {reviewed_game: "******* One of the best games on PS4 hands down.
-    I have played Diablo since the first one on PC and even though nothing can beat 2 in my opinion this is close.
-    The vanilla version is nothing compared to Reaper of Souls, it added a whole new game to Diablo, with rifts and greater rifts and the new chapter V and also adventure mode where its endless and you can farm high end gear. Blizzard are still releasing patches adding new seasons and content so you get ALOT of gameplay and content for the price.
-    Its so good I have got platinum on 3 different versions and still go back to it every now and again.
-    It also has multiplayer of up to 4 players which is also fun, challenging and more rewarding.
-    I bought this for my son for Christmas so we can play multiplayer even though I have full level 70 characters *****", rating: 5},
-  {reviewed_game: "******Ignore the negative reviews, all the dlc downloads automatically so who cares if it’s on the disc or not. Played the original version on PS3 which was good but this PS4 version is 100 times better! If you love character building RPGs like Baldur’s Gate and Champions of Norrath get this now*****", rating: 5},
-  {reviewed_game: "******The base game is good i had it on previous console generation. But the expansions really make the game re-playable. Just a disappointing price for a very old game. they do bring out new seasons and some content tweaks, so it does keep the game fresh. worth a play.******", rating: 5},
-  {reviewed_game: "*****This Game was ok, I have def played better ones! ******", rating: 3},
-  {reviewed_game: "******* One of the best games on PS4 hands down.
-    I have played Diablo since the first one on PC and even though nothing can beat 2 in my opinion this is close.
-    The vanilla version is nothing compared to Reaper of Souls, it added a whole new game to Diablo, with rifts and greater rifts and the new chapter V and also adventure mode where its endless and you can farm high end gear. Blizzard are still releasing patches adding new seasons and content so you get ALOT of gameplay and content for the price.
-    Its so good I have got platinum on 3 different versions and still go back to it every now and again.
-    It also has multiplayer of up to 4 players which is also fun, challenging and more rewarding.
-    I bought this for my son for Christmas so we can play multiplayer even though I have full level 70 characters *****", rating: 5},
-  {reviewed_game: "******Ignore the negative reviews, all the dlc downloads automatically so who cares if it’s on the disc or not. Played the original version on PS3 which was good but this PS4 version is 100 times better! If you love character building RPGs like Baldur’s Gate and Champions of Norrath get this now*****", rating: 5},
-  {reviewed_game: "******The base game is good i had it on previous console generation. But the expansions really make the game re-playable. Just a disappointing price for a very old game. they do bring out new seasons and some content tweaks, so it does keep the game fresh. worth a play.******", rating: 5},
-  {reviewed_game: "*****This Game was ok, I have def played better ones! ******", rating: 3},
-  ]
-  reviews.each {|review| Review.create(review)}
 
-  puts "seeds working!!"
+puts "seeds working!!"

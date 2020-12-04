@@ -5,9 +5,9 @@
 <table>
   <thead>
     <tr>
+      <th>Game</th>
       <th>Review</th>
-      <th>Rating</th>
-      <th>Game Title<th>
+      <th>Raiting<th>
       <th colspan="4"></th>
     </tr>
   </thead>
@@ -16,9 +16,9 @@
     <% @reviews.each do |review| %>
      <%# <% if review.user == current_user %> 
       <tr>
+        <td><%= review.game.name %></td>
         <td><%= review.reviewed_game %></td>
         <td><%= review.rating %></td>
-            <td><%= review.game.name %></td>
         <td><%= link_to 'Show', review %></td>
         <td><%= link_to 'Edit', edit_review_path(review) %></td>
         <td><%= link_to 'Destroy', review, method: :delete, data: { confirm: 'Are you sure?' } %></td>
