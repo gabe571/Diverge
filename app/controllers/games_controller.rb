@@ -1,11 +1,13 @@
 class GamesController < ApplicationController
   before_action :set_game, only: [:show, :edit, :update, :destroy]
-
+  require 'httparty'
+  require 'json'
   # GET /games
   # GET /games.json
   def index
     @games = Game.all
   end
+
 
   # GET /games/1
   # GET /games/1.json
@@ -69,6 +71,6 @@ class GamesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def game_params
-      params.require(:game).permit(:title, :release_date, :game_studio_id) 
+      params.require(:game).permit(:name, :released, :game_studio_id) 
     end
 end

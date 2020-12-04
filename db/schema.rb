@@ -23,8 +23,8 @@ ActiveRecord::Schema.define(version: 2020_12_02_045134) do
   end
 
   create_table "games", force: :cascade do |t|
-    t.string "title"
-    t.integer "release_date"
+    t.string "name"
+    t.integer "released"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.integer "game_studio_id"
