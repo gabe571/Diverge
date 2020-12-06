@@ -15,7 +15,8 @@ class ReviewsController < ApplicationController
 
   # GET /reviews/new
   def new
-    @review = current_user.reviews.build
+   @game = Game.find(params[:game_id])
+   @review = current_user.reviews.new
   end
 
   # GET /reviews/1/edit
@@ -25,7 +26,9 @@ class ReviewsController < ApplicationController
   # POST /reviews
   # POST /reviews.json
   def create
-    @review = current_user.reviews.build(review_params)
+    @review = current_user.reviews.new(review_params)
+    @game = Game.find(params[:game_id])
+    @review.game = @game
 
     respond_to do |format|
       if @review.save

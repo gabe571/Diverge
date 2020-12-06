@@ -1,4 +1,4 @@
-<%= form_with(model: review, local: true) do |form| %>
+<%= form_with model: [@game, @review] do |form| %>
   <% if review.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(review.errors.count, "error") %> prohibited this review from being saved:</h2>
@@ -23,14 +23,6 @@
   <div class="field">
     <%= form.label :drop_Your_Review %>
     <%= form.text_area :reviewed_game, :size => "50x10"  %>
-  </div>
-
-  <div class="field form-group">
-    <%= form.number_field :user_id, id: :review_user_id, class:"form-control", value: current_user.id, type: :hidden %>
-  </div>
-
-<div class="field form-group">
-    <%= form.number_field :game_id, id: :review_game_id, class:"form-control", value: @game_id, type: :hidden %>
   </div>
 
   <div class="actions">
