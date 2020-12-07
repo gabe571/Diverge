@@ -80,4 +80,4 @@ class ReviewsController < ApplicationController
     def review_params
       params.require(:review).permit(:reviewed_game, :rating, :game_id, :user_id)
     end
-end
+  end
