@@ -17,6 +17,7 @@
         <td><%= review.game.name %></td>
         <td><%= review.reviewed_game %></td>
         <td><%= review.rating %></td>
+        <%# <%= link_to "New Review", new_game_review_path(:game_id @game.id) %> 
         <td><%= link_to 'Destroy', game_review_path(:game_id, review), method: :delete, data: { confirm: 'Are you sure?' }
         %> </td>
       </tr> 
@@ -26,6 +27,13 @@
 </table>
 
 <br>
+<%= link_to 'Back', games_path %>
+
+<%# <%= link_to "New Review", new_game_review_path(game_id: @game.id) %> 
+
+<%# <td><%= link_to 'Destroy', game_review_path(:game_id, review), method: :delete, data: { confirm: 'Are you sure?' } %>
+
+
 
 
 

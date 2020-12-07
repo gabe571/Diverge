@@ -32,7 +32,7 @@ class ReviewsController < ApplicationController
 
     respond_to do |format|
       if @review.save
-        format.html { redirect_to @review, notice: 'Review was successfully created.' }
+        format.html { redirect_to game_reviews_path(@review.game.id), notice: 'Review was successfully created.' }
         format.json { render :show, status: :created, location: @review }
       else
         format.html { render :new }
@@ -40,6 +40,8 @@ class ReviewsController < ApplicationController
       end
     end
   end
+  # <%= link_to "New Review", new_game_review_path(game_id: @game.id) %>
+
 
   # PATCH/PUT /reviews/1
   # PATCH/PUT /reviews/1.json
