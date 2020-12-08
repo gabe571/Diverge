@@ -1,4 +1,8 @@
 <p>
+  <strong>Game Id:</strong>
+  <%= @review.game.id %>
+</p>
+<p>
   <strong>Reviewed game:</strong>
   <%= @review.reviewed_game %>
 </p>
@@ -8,5 +12,6 @@
   <%= @review.rating %>
 </p>
 
-<%= link_to 'Edit', edit_game_review_path(@review) %> |
+
+<%# <%= link_to 'Edit', edit_game_review_path(game.review, game) %> | 
 <%= link_to 'Back', game_reviews_path %>

@@ -19,6 +19,7 @@ class GameStudiosController < ApplicationController
 
   # GET /game_studios/1/edit
   def edit
+    @review = Review.find(params[:id])
   end
 
   # POST /game_studios

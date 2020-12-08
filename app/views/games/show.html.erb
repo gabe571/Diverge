@@ -18,10 +18,11 @@
   <%= @game.game_studio.location %>
 </p>
 
-<%# <%= link_to 'New Review', new_game_review_path(:game_id) %> 
 <%= link_to "New Review", new_game_review_path(game_id: @game.id) %>
 
-<%# <td><%= link_to 'Destroy', game_review_path(:game_id, review), method: :delete, data: { confirm: 'Are you sure?' } %>
-
-
+<div class= "reviews">
+<div>
+<%= link_to 'reviews', game_reviews_path(game_id: @game.id), @reviews %>
 <%= link_to 'Back', games_path %>
+
+

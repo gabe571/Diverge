@@ -1,4 +1,4 @@
-<% if user_signed_in? %>
+
 
 <h1>Reviews</h1>
 
@@ -8,32 +8,29 @@
       <th>Game</th>
       <th>Review</th>
       <th>Raiting<th>
-      <th colspan="4"></th>
+      <th>Game id<th>
+      <th colspan="5"></th>
     </tr>
   </thead>
   <tbody>
     <% @reviews.each do |review| %>
       <tr>
+        <td><%= review.game.id %><td>
         <td><%= review.game.name %></td>
         <td><%= review.reviewed_game %></td>
         <td><%= review.rating %></td>
-        <%# <%= link_to "New Review", new_game_review_path(:game_id @game.id) %> 
+        <td><%= link_to 'Edit', edit_game_review_path(:game_id, review)%><td>
         <td><%= link_to 'Destroy', game_review_path(:game_id, review), method: :delete, data: { confirm: 'Are you sure?' }
         %> </td>
       </tr> 
     <% end %>
-  <% end %>
+ 
   </tbody>
 </table>
 
 <br>
 <%= link_to 'Back', games_path %>
-
-<%# <%= link_to "New Review", new_game_review_path(game_id: @game.id) %> 
-
-<%# <td><%= link_to 'Destroy', game_review_path(:game_id, review), method: :delete, data: { confirm: 'Are you sure?' } %>
-
-
+<%= link_to "New Review", new_game_review_path %>
 
 
 
