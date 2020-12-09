@@ -5,7 +5,7 @@ class ReviewsController < ApplicationController
   # GET /reviews
   # GET /reviews.json
   def index
-    @reviews = Review.all
+    @reviews = Review.where(game_id: params[:game_id]).all
   end
 
   # GET /reviews/1
