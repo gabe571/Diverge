@@ -33,7 +33,7 @@ class ReviewsController < ApplicationController
 
     respond_to do |format|
       if @review.save
-        format.html { redirect_to game_reviews_path(@review), notice: 'Review was successfully created.' }
+        format.html { redirect_to game_reviews_path(review_id: @review), notice: 'Review was successfully created.' }
         format.json { render :show, status: :created, location: @review }
       else
         format.html { render :new }
@@ -53,8 +53,8 @@ class ReviewsController < ApplicationController
 
     respond_to do |format|
       if @review.update(review_params)
-        format.html { redirect_to game_reviews_path(@review), notice: 'Review was successfully updated.' }
-        format.json { render :show, status: :ok, location: @review }
+        format.html { redirect_to game_reviews_path(review_id: @review), notice: 'Review was successfully updated.' }
+        format.json { render :show, status: :created, location: @review }
       else
         format.html { render :edit }
         format.json { render json: @review.errors, status: :unprocessable_entity }
@@ -67,14 +67,14 @@ class ReviewsController < ApplicationController
   def destroy
     @review.destroy
     respond_to do |format|
-      format.html { redirect_to game_reviews_path(@review), notice: 'Review was successfully destroyed.' }
+      format.html { redirect_to games_path, notice: 'Review was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
 
   def correct_user
     @review = current_user.reviews.find_by(id: params[:id])
-    redirect_to game_reviews_path, notice:" Not Authorized to Edit This Review" if @review.nil?
+    redirect_to game_reviews_path(game_id: @game.id, review_id: @review), notice:" Not Authorized to Edit This Review" if @review.nil?
     end
 
   private
