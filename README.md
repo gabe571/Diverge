@@ -8,12 +8,12 @@ Ruby 6.0.3
 * Deployment instructions
 
 In terminal type:
-bundle install
-rails db:migrate
-rails s
+```bundle install```
+```rails db:migrate```
+```rails s```
 
 In brower type:
-localhost:3000/login
+```localhost:3000/login```
 
 * Status
 
