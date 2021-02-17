@@ -11,18 +11,17 @@
     </div>
   <% end %>
 
-
-<div class="field">
+<div class="field form-group">
     <%= form.label :title %>
     <%= form.label @game.name %>
   </div>
 
-  <div class="field">
+  <div class="field form-group">
     <%= form.label :rating %>
     <%= form.number_field :rating, :within => 0..5 %>
   </div>
 
-  <div class="field">
+  <div class="field form-group">
     <%= form.label :drop_Your_Review %>
     <%= form.text_area :reviewed_game, :size => "50x10"  %>
   </div>

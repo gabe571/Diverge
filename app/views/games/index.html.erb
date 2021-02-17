@@ -1,5 +1,4 @@
 <h1>Games</h1>
-
 <table>
   <thead>
     <tr>
@@ -16,8 +15,18 @@
         <td><%= game.name %></td>
         <td><%= game.released %></td>
         <td><%= game.game_studio.name %></td>
+        <%# <td> <%= image_tag("/images/wc3.jpg", :size=> "300x200") %> </td> 
         <td><%= link_to 'Show', game %></td>
       </tr>
+      <%# <img src='/images/wc3.jpg'> %>
+      <div class="container">
+ <div class="gameimages">
+   <% @images.each do |image| %>
+     <%= image_tag image  %>
+   <% end %>
+ </div>
+</div>
+
     <% end %>
   </tbody>
 </table>

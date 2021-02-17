@@ -24,10 +24,10 @@ game_studios = [
 
   game_studios.each {|game_studio| GameStudio.create(game_studio)}
 
-  user = User.create! :username => 'John Doe', :email => 'john@gmail.com', :password => 'topsecret', :password_confirmation => 'topsecret'
+  user = User.create! :username => 'Gabriel Castro', :email => 'gabriel.castro1028@gmail.com', :password => 'topsecret', :password_confirmation => 'topsecret'
 
 games = [  
-  {name: "Warcraft 3", released: "2002-03-07", game_studio_id: 1 },
+  {name: "Warcraft III: Reforged", released: "2002-03-07", game_studio_id: 1, image: "/images/wc3.jpg" },
   {name: "Diablo", released: "1996-12-31" , game_studio_id: 1 },
   {name: "Diablo 2", released: "2000-06-29", game_studio_id: 1 },
   {name: "Diablo 3", released: "2012-05-01", game_studio_id: 1  },
