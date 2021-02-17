@@ -1,25 +1,20 @@
-# README
+# DIVERGE
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Welcome to Diverge.  This RESTful APP is designed to help you write, update and review games!  Simply Login to your account to view gaming titles, from here you can see current reviews for games and also write and update your own reviews.
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
+* Technologies
+Ruby 6.0.3
 
 * Deployment instructions
 
-* ...
-# Diverge
+In terminal type:
+```bundle install```
+```rails db:migrate```
+```rails s```
+
+In brower type:
+```localhost:3000/login```
+
+* Status
+
+Active
